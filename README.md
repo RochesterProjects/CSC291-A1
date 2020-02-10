@@ -2,6 +2,11 @@
 Shoham Shitrit
 31391856
 sshitrit
+
+# To Run: 
+(load "HW1")
+Then, part 1 wil start running. Once you type "bye ~" in part 1, 
+part two will start running.
 # For Part 1:
 Sample Statements Robbie Can Respond To:
 1.) Whats your name?
@@ -12,11 +17,17 @@ Sample Statements Robbie Can Respond To:
 6.) Do you have friends?
 7.) What is your favorite color? //accepts other combinations w/ keyowrd color
 8.) Are you a human?
+9.) Whats your favorite sport? //  //accepts other questions w/ keywords favorite and sport
+
 
 Things to remember when inputting statements:
 When finishing a statement, end it by hitting space bar and then typing a tilde (~), then pressing enter 
 to see robbie's response.
-To quit and see robbie's farewell to you, type "bye ~". 
+To quit and see robbie's farewell to you, type "bye ~".  
+
+*** Warnings with part 1** 
+For some reason, when one runs this program, there is a so-called warning on line 42, (setq input (read-delimited-list #\~)) about how input would be undefined.
+It works completely fine, and this is just how the professor said to do it in class, so I just ignored this warning. 
 ## Structure: 
 Conversation method to run;
     -> Calls (write-response) on user input
@@ -44,3 +55,7 @@ Enter arguments for ANSWER-YNQ (q to stop): (Bill)
             ->checks (gethash) 
             ->(checks (has-predicate)
         -> prints result using (print-fun)
+
+*** Warnings with part 2** 
+For some reason, when one runs this program, there is a so-called warning on line 99, 	(setq arg1 (read)), about how arg1 would be undefined. 
+It works completely fine, and this is just how the professor said to do it in class, so I just ignored this warning. 

@@ -10,7 +10,7 @@
 )
 
 (defun name-greeting (input)
-	(format t "~%Hello, ~a! It's great to meet you." '(last input)) ;assume last word is the name.
+	(format t "~%Hello, ~a! It's great to meet you." (last input)) ;assume last word is the name.
 )
 (defun write-response (input) ; this function takes user input and tries to match it to the appropriate output that Robbie will say. 
     (cond ;has combinations of comparing to full sentences and checking if a certain keyword exists. 
@@ -39,7 +39,7 @@
 	(format t "Robbie: Hello! I am Robbie the robot. Whats your name?")
     (loop
     (format t "~%You:") 
-	(let input (read-delimited-list #\~)) ;read from input, delimit it, then send it to write-response
+	(setq input (read-delimited-list #\~)) ;read from input, delimit it, then send it to write-response
     (write-response input)
 	(when (equalp (car input) 'bye) (return (format t "~%Bye Bye, human!~%"))) ;check for bye, then print farewell.
     ) 
@@ -96,7 +96,7 @@
 (defun repl1(f) ;repl for part two. Enter elements in a list. Ex: (Robot Robbie)
 	(format t "Enter arguments for ~a (q to stop): " f)
 	(finish-output nil)
-	(let arg1 (read))
+	(setq arg1 (read))
 	(if (equalp (format nil "~a" arg1) "q") ;check for q
 		nil
 		(if (print-fun f arg1)
